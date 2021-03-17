@@ -8,7 +8,11 @@
       <li>Vuex</li>
       <li>Axios</li>
       <li>Vue router</li>
+      <li>Github</li>
+      <li>AWS Amplify</li>
     </ul>
+
+    <p>This is hosted on AWS & deployed through Github & AWS Amplify</p>
 
     <p>Click on "User Todos" to get "Todos" according to the selected user from {JSON} Placeholder</p>
     <p>Click on "Posts" to get "posts" fron {JSON} Placeholder</p>

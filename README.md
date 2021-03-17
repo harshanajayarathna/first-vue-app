@@ -7,7 +7,8 @@ Vue 3,
 {JSON} Placeholder as an api service, 
 Vuex, 
 Axios, 
-Vue router, 
+Vue router
+
 
 Click on "User Todos" to get "Todos" according to the selected user from {JSON} Placeholder
 
