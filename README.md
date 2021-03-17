@@ -1,5 +1,16 @@
 # first-vue-app
 
+### Description
+To build this demo application, I've used following things;
+Vue 3
+{JSON} Placeholder as an api service
+Vuex
+Axios
+Vue router
+Click on "User Todos" to get "Todos" according to the selected user from {JSON} Placeholder
+
+Click on "Posts" to get "posts" fron {JSON} Placeholder
+
 ## Project setup
 ```
 npm install
