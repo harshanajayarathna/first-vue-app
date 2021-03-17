@@ -1,7 +1,19 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
+    <h1>Demo Vue 3 Application</h1>
+    <h3>To build this demo application, I've used following things;</h3>
+    <ul>
+      <li>Vue 3</li>
+      <li>{JSON} Placeholder as an api service</li>
+      <li>Vuex</li>
+      <li>Axios</li>
+      <li>Vue router</li>
+    </ul>
+
+    <p>Click on "User Todos" to get "Todos" according to the selected user from {JSON} Placeholder</p>
+    <p>Click on "Posts" to get "posts" fron {JSON} Placeholder</p>
+    <!-- <h1>{{ msg }}</h1> -->
+    <!-- <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
@@ -21,14 +33,20 @@
       <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
       <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
     </ul>
-    <h3>Ecosystem</h3>
+    <h3>Ecosystem {{userName}}</h3>
+    <h3>Done ToDos</h3>
+    <ul>
+      <li v-for="(doneTodo, index) in doneTodos" :key="index">{{doneTodo.text}}</li>
+    </ul>
+    <h3>User Age is {{userAge}}</h3>
+    <button id="btn-age" @click="increaseAge"> + </button>
     <ul>
       <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
       <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
       <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
@@ -37,6 +55,22 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  computed: {
+    userName () {
+      return this.$store.state.username
+    },
+    doneTodos () {
+      return this.$store.getters.doneTodos
+    },
+    userAge () {
+      return this.$store.getters.age
+    }
+  },
+  methods: {
+    increaseAge () {
+      this.$store.dispatch('SET_AGE', 2)
+    }
   }
 }
 </script>
@@ -47,11 +81,11 @@ h3 {
   margin: 40px 0 0;
 }
 ul {
-  list-style-type: none;
+  list-style-type: lower-greek;
   padding: 0;
 }
 li {
-  display: inline-block;
+  /* display: inline-block; */
   margin: 0 10px;
 }
 a {
